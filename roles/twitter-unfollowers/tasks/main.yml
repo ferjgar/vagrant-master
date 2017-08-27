@@ -1,0 +1,6 @@
+# https://github.com/ferjgar/twitter-unfollowers
+---
+- name: Install PHP
+  yum:
+    name: php
+    state: latest

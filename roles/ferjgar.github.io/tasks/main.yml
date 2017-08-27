@@ -1,0 +1,5 @@
+# https://github.com/ferjgar/ferjgar.github.io
+---
+- bundler:
+    gemfile: "{{ vagrant_synced_folder }}/ferjar.github.io/Gemfile"
+    state: present

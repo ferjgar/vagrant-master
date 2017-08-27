@@ -1,0 +1,17 @@
+---
+- name: Install EPEL repository
+  yum:
+    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm
+    state: present
+
+# this is the main language for youtube-backup, but turns out that for ferjgar.github.io, jekyll
+# requires some kind of javascript runtime, so let's get node
+- name: Install nodejs
+  yum:
+    name: nodejs
+    state: latest
+
+- name: Set useful aliases
+  template:
+    src: alias.j2
+    dest: /etc/profile.d/ferjgar.sh

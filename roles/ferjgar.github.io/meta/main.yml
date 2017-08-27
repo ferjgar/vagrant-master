@@ -1,0 +1,12 @@
+---
+# hate to add a dependency, but installing ruby is not trivial at all on unix (WHY?)
+# RVM does a lot of black magic, so let's use its official role to KISS
+# note that this role must be installed BEFORE executing this playbook, can't be done at runtime
+# because ansible will fail if not found, that's why we have requirements.yml, which will be used
+# by vagrant to do just that
+dependencies:
+  - { role: rvm_io.ruby,
+        #rvm1_install_flags: '--auto-dotfiles',     # Remove --user-install from defaults
+        #rvm1_install_path: /usr/local/rvm,         # Set to system location
+        rvm1_user: vagrant
+    }
