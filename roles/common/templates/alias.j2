@@ -1,4 +1,4 @@
-alias ferjgar='(cd {{ vagrant_synced_folder }}/ferjgar.github.io && bundle exec jekyll serve --host 0.0.0.0)'
+alias ferjgar='(cd {{ vagrant_synced_folder }}/ferjgar.github.io && bundle exec jekyll serve --force_polling --host 0.0.0.0)'
 
 # probably we'd do this 99% of the times we connect to the VM
 cd {{ vagrant_synced_folder }}
