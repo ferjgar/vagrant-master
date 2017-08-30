@@ -1,5 +1,8 @@
 # https://github.com/ferjgar/ferjgar.github.io
 ---
 - bundler:
-    gemfile: "{{ vagrant_synced_folder }}/ferjar.github.io/Gemfile"
+    # this depends on the ruby version that will be installed with the role rvm_io.ruby
+    # the path looks like (another) RVM hack: https://stackoverflow.com/questions/26247926/how-to-solve-usr-bin-env-ruby-executable-hooks-no-such-file-or-directory
+    executable: /usr/local/rvm/gems/ruby-2.3.1/wrappers/bundler
+    gemfile: "{{ vagrant_synced_folder }}/ferjgar.github.io/Gemfile"
     state: present
