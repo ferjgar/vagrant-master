@@ -5,7 +5,7 @@
 # because ansible will fail if not found, that's why we have requirements.yml, which will be used
 # by vagrant to do just that
 dependencies:
-  - { role: rvm_io.ruby,
+  - { role: rvm.ruby,
         rvm1_rubies: ['ruby-2.3.1'],
         # we need the lines below to install ruby and related stuff system-wide
         rvm1_install_flags: '--auto-dotfiles',
